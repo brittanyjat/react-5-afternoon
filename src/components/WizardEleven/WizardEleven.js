@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class WizardEleven extends Component {
 
     render() {
+        console.log(this.props)
         return (
             <div className="parent-div">
                 <div className="vert-align">

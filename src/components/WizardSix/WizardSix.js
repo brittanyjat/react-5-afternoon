@@ -6,7 +6,7 @@ import { updateCost, updatePayment } from '../../ducks/reducer';
 class WizardSix extends Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         const { updateCost, updatePayment } = this.props;
         return (
             <div className="parent-div">

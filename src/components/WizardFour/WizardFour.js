@@ -1,31 +1,39 @@
-import React, { Component } from 'react';
+import React,  { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { updateFound } from '../../ducks/reducer';
 
 class WizardFour extends Component {
-    render() {
-        // console.log(this.props)
-        const { updateFound } = this.props;
-        return (
-            <div className="parent-div">
-                <div className="vert-align">
-                    <p>Have you already found your new home?</p> <br />
+  render() {
+    const { updateFound } = this.props;
 
-                    <div className="row">
-                        <Link to="/wFive"><button onClick={(e) => updateFound(true)}>Yes</button></Link>
-                        <Link to="/wFive"><button onClick={(e) => updateFound(false)}>No </button></Link>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+    return (
+      <div className="parent-div">
+        <div className="vert-align">
+          <p>Have you already found your new home?</p><br />
+          
+          <div className="row">
+            <Link to="/wFive">
+              <button onClick={ ( e ) => updateFound( true ) }>Yes</button>
+            </Link>
+
+            <Link to="/wFive">
+              <button onClick={ ( e ) => updateFound( false ) }>No</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-var mapStateToProps = (state) => {
-    return {
-        found: state.found
-    }
-};
+function mapStateToProps( state ) {
+  const { found } = state;
 
-export default connect(mapStateToProps, { updateFound })(WizardFour);
+  return {
+    found
+  };
+}
+
+export default connect( mapStateToProps, { updateFound } )( WizardFour );
